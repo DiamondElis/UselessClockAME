@@ -4,6 +4,7 @@ let lastUpdateMinute = -1;
 
 function setup() {
     console.log("Setup function called");
+    
     // Verify containers exist
     const containers = [
         document.getElementById('dice-container-1'),
@@ -14,6 +15,8 @@ function setup() {
     containers.forEach((container, index) => {
         if (container) {
             console.log(`Dice container ${index + 1} found:`, container);
+            // Add temporary background for debugging
+            container.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
         } else {
             console.error(`Dice container ${index + 1} not found!`);
         }
@@ -63,6 +66,11 @@ function updateDots() {
 
 function updateAmPmDot(isAM) {
     const container = document.getElementById('dice-1-dot-container');
+    if (!container) {
+        console.error('AM/PM container not found!');
+        return;
+    }
+    
     container.innerHTML = '';
     
     // Add a single dot in the middle - black for AM, red for PM
@@ -81,6 +89,11 @@ function updateAmPmDot(isAM) {
 
 function updateDiceDots(containerId, dotNumber) {
     const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container ${containerId} not found!`);
+        return;
+    }
+    
     container.innerHTML = '';
     
     // If dot number is 0, no dots are shown
