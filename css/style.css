@@ -48,40 +48,37 @@ body, html {
     padding: 0;
 }
 
-#dice-container-1, #dice-container-2, #dice-container-3, #dice-container-4 {
+.dice-container {
     position: fixed;
     width: 180px;
     height: 180px;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background for visibility */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
     z-index: 10;
     pointer-events: none;
 }
 
-#dice-container-1 {
-    position: fixed;
+.am-pm-dice {
     top: 38px;
     left: 3px;
     transform: none;
 }
 
-#dice-container-2 {
-    position: fixed;
+.tens-dice {
     top: 74px;
     right: -15px;
     left: auto;
     transform: none;
 }
 
-#dice-container-3 {
-    position: fixed;
+.ones-dice {
     bottom: -63px;
     left: -18px;
     top: auto;
     transform: none;
 }
 
-#dice-container-4 {
-    position: fixed;
+.minutes-dice {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -290,4 +287,10 @@ body, html {
         width: 100px;
         height: 100px;
     }
+}
+
+/* Add hover effect for debugging */
+.dice-container:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 } 
