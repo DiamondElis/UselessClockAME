@@ -32,11 +32,11 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 300vh; /* Match the page container height */
     z-index: -1;
     background-image: url('/UselessClockAME/assets/images/FrankMiura.png?v=2');
-    background-size: 100%;
-    background-position: center center;
+    background-size: 100% auto; /* Changed to auto height to prevent cropping */
+    background-position: center top; /* Align to top */
     background-repeat: no-repeat;
     background-color: #a48d57;
 }
