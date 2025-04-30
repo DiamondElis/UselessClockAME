@@ -59,18 +59,21 @@ body, html {
 }
 
 .am-pm-dice {
+    position: absolute;
     top: 440px;
     left: 700px;
     transform: rotate(28deg);
 }
 
 .tens-dice {
+    position: absolute;
     top: 560px;
     left: 880px;
     transform: rotate(28deg);
 }
 
 .ones-dice {
+    position: absolute;
     bottom: 82px;
     left: 640px;
     top: auto;
