@@ -37,9 +37,7 @@
     <div class="test-element">If you see this text, CSS is loading correctly!</div>
     
     <!-- Background Image Container -->
-    <div class="background-container">
-        <img class="background-image" src="/UselessClockAME/assets/images/FrankMiura.png" alt="Useless Clock">
-    </div>
+    <div class="background-container"></div>
     
     <!-- Dice Container for p5.js -->
     <div id="dice-container"></div>
@@ -51,9 +49,11 @@
             console.log("Page loaded, checking resources...");
             
             // Check if background image loaded
-            const bgImage = document.querySelector('.background-image');
+            const bgContainer = document.querySelector('.background-container');
+            const computedStyle = window.getComputedStyle(bgContainer);
+            const bgImage = computedStyle.backgroundImage;
             
-            console.log("Background image path:", bgImage.src);
+            console.log("Background image path:", bgImage);
             
             // Create element to show debug info
             const debugElement = document.createElement('div');
@@ -67,20 +67,22 @@
             debugElement.style.zIndex = '1000';
             debugElement.innerHTML = `
                 <p>Debug Info:</p>
-                <p>Background image path: ${bgImage.src}</p>
+                <p>Background image path: ${bgImage}</p>
                 <p>Document location: ${window.location.href}</p>
             `;
             document.body.appendChild(debugElement);
 
             // Test image loading
-            bgImage.onload = function() {
+            const img = new Image();
+            img.onload = function() {
                 console.log('Image loaded successfully!');
                 debugElement.innerHTML += '<p style="color: green;">✓ Image loaded successfully!</p>';
             };
-            bgImage.onerror = function() {
+            img.onerror = function() {
                 console.error('Failed to load image!');
                 debugElement.innerHTML += '<p style="color: red;">✗ Failed to load image!</p>';
             };
+            img.src = '/UselessClockAME/assets/images/FrankMiura.png';
         });
     </script>
     
