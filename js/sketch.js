@@ -64,12 +64,13 @@ function draw() {
         isAnimating = true;
     }
     
-    // Draw glass container (subtle circular container)
+    // Draw glass container to match the green dish in the image
     push();
     noFill();
-    specularMaterial(255, 255, 255, 20);
-    shininess(100);
-    sphere(diceSize * 2);
+    specularMaterial(100, 150, 100, 30); // More green tint
+    shininess(50);
+    translate(0, diceSize * 0.1, 0); // Adjust position
+    ellipse(0, 0, diceSize * 4, diceSize * 2.5); // Make it more oval
     pop();
     
     // Draw the dice
@@ -149,24 +150,24 @@ function animateDice() {
 }
 
 function drawDice() {
-    // Draw three dice in a triangular arrangement
-    // matching the position in the original image
+    // Draw dice to match the arrangement in the image
+    // The dice appear to be in a triangular arrangement in a green dish
     
-    // First die (tens place for hour)
+    // First die (top left)
     push();
-    translate(-diceSize * 0.6, -diceSize * 0.3, 0);
+    translate(-diceSize * 0.4, -diceSize * 0.2, 0);
     drawSingleDie(0);
     pop();
     
-    // Second die (ones place for hour)
+    // Second die (top right)
     push();
-    translate(0, diceSize * 0.6, 0);
+    translate(diceSize * 0.4, -diceSize * 0.2, 0);
     drawSingleDie(1);
     pop();
     
-    // Third die (AM/PM indicator)
+    // Third die (bottom, centered)
     push();
-    translate(diceSize * 0.6, -diceSize * 0.3, 0);
+    translate(0, diceSize * 0.5, 0);
     drawSingleDie(2);
     pop();
 }

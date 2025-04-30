@@ -28,20 +28,6 @@
             z-index: 999;
             font-family: sans-serif;
         }
-        
-        /* Try multiple path formats for the background image */
-        .background-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: url('./assets/images/FrankMiura.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
     </style>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
@@ -83,8 +69,22 @@
                 <p>Debug Info:</p>
                 <p>Background image path: ${bgImage}</p>
                 <p>Document location: ${window.location.href}</p>
+                <p>Expected image path: /UselessClockAME/assets/images/FrankMiura.png</p>
             `;
             document.body.appendChild(debugElement);
+
+            // Test image loading
+            const img = new Image();
+            img.onload = function() {
+                console.log('Image loaded successfully!');
+                debugElement.innerHTML += '<p style="color: green;">✓ Image loaded successfully!</p>';
+            };
+            img.onerror = function() {
+                console.error('Failed to load image!');
+                debugElement.innerHTML += '<p style="color: red;">✗ Failed to load image!</p>';
+                debugElement.innerHTML += '<p>Please check if the image exists at: /UselessClockAME/assets/images/FrankMiura.png</p>';
+            };
+            img.src = '/UselessClockAME/assets/images/FrankMiura.png';
         });
     </script>
     
