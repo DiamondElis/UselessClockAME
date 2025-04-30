@@ -5,25 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Useless Clock</title>
     <style>
-        /* Test element to verify CSS is loading */
-        .test-element {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: blue;
-            color: red;
-            padding: 10px;
-            z-index: 999;
-            font-family: sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+            /* Allow scrolling */
         }
     </style>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 </head>
 <body>
-    <!-- Test element to verify page is loading -->
-    <div class="test-element">If you see this text, CSS is loading correctly!</div>
-    
     <!-- Page Container -->
     <div class="page-container">
         <!-- Background Image Container -->
@@ -31,21 +28,6 @@
         
         <!-- Dice Container for p5.js -->
         <div id="dice-container"></div>
-        
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">Scroll to explore</div>
-        
-        <!-- Optional: Content Section -->
-        <div class="content-section">
-            <h2>The Useless Clock</h2>
-            <p>An anti-timepiece for those ready to lose track of what matters most.</p>
-            <p>This unique clock displays time using three dice:</p>
-            <ul>
-                <li>First die: AM/PM indicator (black for AM, red for PM)</li>
-                <li>Second die: Tens place of the hour</li>
-                <li>Third die: Ones place of the hour</li>
-            </ul>
-        </div>
     </div>
     
     <!-- Debug info to check paths -->
@@ -60,54 +42,21 @@
             const bgImage = computedStyle.backgroundImage;
             
             console.log("Background image path:", bgImage);
-            
-            // Create element to show debug info
-            const debugElement = document.createElement('div');
-            debugElement.style.position = 'absolute';
-            debugElement.style.bottom = '10px';
-            debugElement.style.left = '10px';
-            debugElement.style.backgroundColor = 'rgba(0,0,0,0.7)';
-            debugElement.style.color = 'white';
-            debugElement.style.padding = '10px';
-            debugElement.style.fontFamily = 'monospace';
-            debugElement.style.zIndex = '1000';
-            debugElement.innerHTML = `
-                <p>Debug Info:</p>
-                <p>Background image path: ${bgImage}</p>
-                <p>Document location: ${window.location.href}</p>
-            `;
-            document.body.appendChild(debugElement);
 
             // Test image loading
             const img = new Image();
             img.onload = function() {
                 console.log('Image loaded successfully!');
-                debugElement.innerHTML += '<p style="color: green;">✓ Image loaded successfully!</p>';
             };
             img.onerror = function() {
                 console.error('Failed to load image!');
-                debugElement.innerHTML += '<p style="color: red;">✗ Failed to load image!</p>';
             };
-            img.src = '/UselessClockAME/assets/images/FrankMiura.png';
+            img.src = '/UselessClockAME/assets/images/FrankMiura.png?v=2';
         });
     </script>
     
     <!-- Scripts -->
     <script src="js/sketch.js"></script>
     <script src="js/main.js"></script>
-    
-    <!-- Scroll effect script -->
-    <script>
-        // Hide scroll indicator after user has scrolled
-        window.addEventListener('scroll', function() {
-            const scrollIndicator = document.querySelector('.scroll-indicator');
-            if (window.scrollY > 100) {
-                scrollIndicator.style.opacity = '0';
-                scrollIndicator.style.transition = 'opacity 0.5s';
-            } else {
-                scrollIndicator.style.opacity = '1';
-            }
-        });
-    </script>
 </body>
 </html> 
