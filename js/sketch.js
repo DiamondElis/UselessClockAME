@@ -26,17 +26,42 @@ function updateDots() {
     lastUpdateHour = hours;
     lastUpdateMinute = minutes;
     
-    // Update all four dice containers
-    updateDiceContainer('dice-1-dot-container', isAM ? 1 : 0); // AM/PM
-    updateDiceContainer('dice-2-dot-container', Math.floor(hours / 10)); // Tens
-    updateDiceContainer('dice-3-dot-container', hours % 10); // Ones
-    updateDiceContainer('dice-4-dot-container', Math.floor(minutes / 10)); // Minutes tens
+    // Update AM/PM dot
+    updateAmPmDot(isAM);
+    
+    // Get the dot configuration based on the mapping
+    const config = getHourDotConfiguration(hours, isAM);
+    
+    // Update tens place dots
+    updateDiceDots('dice-2-dot-container', config.tens);
+    
+    // Update ones place dots
+    updateDiceDots('dice-3-dot-container', config.ones);
     
     // Output for debugging
     console.log(`Time: ${hours}:${minutes < 10 ? '0' + minutes : minutes} ${isAM ? 'AM' : 'PM'}`);
+    console.log(`Dot configuration: AM/PM=${isAM ? 'Black' : 'Red'}, Tens=${config.tens}, Ones=${config.ones}`);
 }
 
-function updateDiceContainer(containerId, dotNumber) {
+function updateAmPmDot(isAM) {
+    const container = document.getElementById('dice-1-dot-container');
+    container.innerHTML = '';
+    
+    // Add a single dot in the middle - black for AM, red for PM
+    const dot = document.createElement('div');
+    dot.className = 'dot am-pm-dot';
+    dot.style.position = 'absolute';
+    dot.style.width = '10px';
+    dot.style.height = '10px';
+    dot.style.borderRadius = '50%';
+    dot.style.backgroundColor = isAM ? '#000' : '#ff0000';
+    dot.style.top = '50%';
+    dot.style.left = '50%';
+    dot.style.transform = 'translate(-50%, -50%)';
+    container.appendChild(dot);
+}
+
+function updateDiceDots(containerId, dotNumber) {
     const container = document.getElementById(containerId);
     container.innerHTML = '';
     
@@ -98,4 +123,40 @@ function addDot(container, top, left, width, height, color) {
     dot.style.left = left;
     dot.style.transform = 'translate(-50%, -50%)';
     container.appendChild(dot);
+}
+
+function getHourDotConfiguration(hour, isAM) {
+    // Configuration based on the mapping provided
+    // 12 am: First Dot= Black, Second Dot=6, Third Dot=6
+    // 1 am: First Dot= Black, Second Dot=0, Third Dot=1
+    // And so on...
+    
+    switch (hour) {
+        case 12:
+            return { tens: 6, ones: 6 };
+        case 1:
+            return { tens: 0, ones: 1 };
+        case 2:
+            return { tens: 0, ones: 2 };
+        case 3:
+            return { tens: 0, ones: 3 };
+        case 4:
+            return { tens: 0, ones: 4 };
+        case 5:
+            return { tens: 0, ones: 5 };
+        case 6:
+            return { tens: 0, ones: 6 };
+        case 7:
+            return { tens: 1, ones: 6 };
+        case 8:
+            return { tens: 2, ones: 6 };
+        case 9:
+            return { tens: 3, ones: 6 };
+        case 10:
+            return { tens: 4, ones: 6 };
+        case 11:
+            return { tens: 5, ones: 6 };
+        default:
+            return { tens: 0, ones: 0 };
+    }
 } 
