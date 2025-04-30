@@ -33,7 +33,7 @@ body, html {
     height: 100%;
     z-index: -1;
     background-image: url('/UselessClockAME/assets/images/FrankMiura.png?v=2');
-    background-size: 150%;
+    background-size: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #a48d57;
