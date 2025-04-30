@@ -21,7 +21,7 @@ body, html {
 
 .page-container {
     position: relative;
-    min-height: 300vh;
+    min-height: 200vh; /* Reduced from 300vh to match image height */
     width: 100%;
     margin: 0;
 }
@@ -31,7 +31,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 300vh; /* Match the page container height */
+    height: 200vh; /* Reduced from 300vh to match image height */
     z-index: -1;
     background-image: url('/UselessClockAME/assets/images/FrankMiura.png?v=2');
     background-size: 100% auto; /* Changed to auto height to prevent cropping */
