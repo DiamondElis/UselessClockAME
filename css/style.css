@@ -14,7 +14,10 @@
 body, html {
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
+    background-color: #C9A227;
     font-family: 'ClockFont', sans-serif;
 }
 
@@ -34,32 +37,24 @@ body, html {
 
 #dice-container {
     position: absolute;
-    top: 58%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    /* Debug outline - remove once positioned correctly */
-    border: 1px solid red;
+    width: 150px;
+    height: 150px;
     background-color: transparent;
 }
 
-/* Test element to verify CSS loading */
+/* Hide the test element */
 .test-element {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: blue;
-    color: red;
-    padding: 10px;
-    z-index: 999;
+    display: none;
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     #dice-container {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 }
 
