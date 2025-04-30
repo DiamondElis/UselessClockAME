@@ -37,7 +37,9 @@
     <div class="test-element">If you see this text, CSS is loading correctly!</div>
     
     <!-- Background Image Container -->
-    <div class="background-container"></div>
+    <div class="background-container">
+        <img class="background-image" src="/UselessClockAME/assets/images/FrankMiura.png" alt="Useless Clock">
+    </div>
     
     <!-- Dice Container for p5.js -->
     <div id="dice-container"></div>
@@ -49,11 +51,9 @@
             console.log("Page loaded, checking resources...");
             
             // Check if background image loaded
-            const bgContainer = document.querySelector('.background-container');
-            const computedStyle = window.getComputedStyle(bgContainer);
-            const bgImage = computedStyle.backgroundImage;
+            const bgImage = document.querySelector('.background-image');
             
-            console.log("Background image path:", bgImage);
+            console.log("Background image path:", bgImage.src);
             
             // Create element to show debug info
             const debugElement = document.createElement('div');
@@ -67,24 +67,20 @@
             debugElement.style.zIndex = '1000';
             debugElement.innerHTML = `
                 <p>Debug Info:</p>
-                <p>Background image path: ${bgImage}</p>
+                <p>Background image path: ${bgImage.src}</p>
                 <p>Document location: ${window.location.href}</p>
-                <p>Expected image path: /UselessClockAME/assets/images/FrankMiura.png</p>
             `;
             document.body.appendChild(debugElement);
 
             // Test image loading
-            const img = new Image();
-            img.onload = function() {
+            bgImage.onload = function() {
                 console.log('Image loaded successfully!');
                 debugElement.innerHTML += '<p style="color: green;">✓ Image loaded successfully!</p>';
             };
-            img.onerror = function() {
+            bgImage.onerror = function() {
                 console.error('Failed to load image!');
                 debugElement.innerHTML += '<p style="color: red;">✗ Failed to load image!</p>';
-                debugElement.innerHTML += '<p>Please check if the image exists at: /UselessClockAME/assets/images/FrankMiura.png</p>';
             };
-            img.src = '/UselessClockAME/assets/images/FrankMiura.png';
         });
     </script>
     
