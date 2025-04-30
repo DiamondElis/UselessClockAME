@@ -4,18 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Useless Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        /* Test element to verify CSS is loading */
+        .test-element {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: blue;
+            color: red;
+            padding: 10px;
+            z-index: 999;
+            font-family: sans-serif;
+        }
+        
+        /* Try multiple path formats for the background image */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('./assets/images/FrankMiura.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
 </head>
 <body>
-    <!-- Test element to verify CSS loading -->
-    <div class="test-element">If you can see this text in red on a blue background, your CSS is loading!</div>
+    <!-- Test element to verify page is loading -->
+    <div class="test-element">If you see this text, CSS is loading correctly!</div>
     
     <!-- Background Image Container -->
     <div class="background-container"></div>
     
-    <!-- Dice Container for p5.js canvas -->
+    <!-- Dice Container for p5.js -->
     <div id="dice-container"></div>
+    
+    <!-- Debug info to check paths -->
+    <script>
+        // Display currently loaded paths and errors
+        window.addEventListener('load', function() {
+            console.log("Page loaded, checking resources...");
+            
+            // Check if background image loaded
+            const bgContainer = document.querySelector('.background-container');
+            const computedStyle = window.getComputedStyle(bgContainer);
+            const bgImage = computedStyle.backgroundImage;
+            
+            console.log("Background image path:", bgImage);
+            
+            // Create element to show debug info
+            const debugElement = document.createElement('div');
+            debugElement.style.position = 'absolute';
+            debugElement.style.bottom = '10px';
+            debugElement.style.left = '10px';
+            debugElement.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            debugElement.style.color = 'white';
+            debugElement.style.padding = '10px';
+            debugElement.style.fontFamily = 'monospace';
+            debugElement.style.zIndex = '1000';
+            debugElement.innerHTML = `
+                <p>Debug Info:</p>
+                <p>Background image path: ${bgImage}</p>
+                <p>Document location: ${window.location.href}</p>
+            `;
+            document.body.appendChild(debugElement);
+        });
+    </script>
     
     <!-- Scripts -->
     <script src="js/sketch.js"></script>
