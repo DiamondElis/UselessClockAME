@@ -2,6 +2,9 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize p5.js
+    new p5();
+    
     // Check if the browser supports WebGL
     checkWebGLSupport();
     
