@@ -55,39 +55,45 @@ body, html {
     width: 180px;
     height: 180px;
     background-color: transparent;
-    z-index: 2;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .dot-container {
-    position: absolute;
+    position: fixed;
     width: 50px;
     height: 50px;
     background-color: transparent;
-    z-index: 3;
+    z-index: 11;
+    pointer-events: none;
 }
 
 #am-pm-container {
-    top: 38px;
-    left: 3px;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #tens-container {
-    top: 74px;
-    right: -15px;
+    top: 74%;
+    right: 50%;
+    transform: translate(50%, -50%);
 }
 
 #ones-container {
-    bottom: -63px;
-    left: -18px;
+    bottom: 38%;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 
 .dot {
-    position: absolute;
+    position: fixed;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #000;
-    z-index: 4;
+    z-index: 12;
+    pointer-events: none;
 }
 
 .am-pm-dot {
