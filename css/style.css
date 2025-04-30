@@ -26,21 +26,20 @@ body, html {
     height: 100%;
     z-index: -1;
     background-image: url('/UselessClockAME/assets/images/FrankMiura.png');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #C9A227;
 }
 
 #dice-container {
     position: absolute;
-    top: 58%;
+    /* Position this exactly where the dice appear in your image */
+    top: 65%; /* Adjust as needed to match the image */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    /* Debug outline - remove once positioned correctly */
-    border: 1px solid red;
+    width: 200px;
+    height: 200px;
+    /* Make the container transparent so it doesn't block the image */
     background-color: transparent;
 }
 
