@@ -3,6 +3,22 @@ let lastUpdateHour = -1;
 let lastUpdateMinute = -1;
 
 function setup() {
+    console.log("Setup function called");
+    // Verify containers exist
+    const containers = [
+        document.getElementById('dice-container-1'),
+        document.getElementById('dice-container-2'),
+        document.getElementById('dice-container-3')
+    ];
+    
+    containers.forEach((container, index) => {
+        if (container) {
+            console.log(`Dice container ${index + 1} found:`, container);
+        } else {
+            console.error(`Dice container ${index + 1} not found!`);
+        }
+    });
+    
     // Initial update
     updateDots();
     
@@ -25,6 +41,8 @@ function updateDots() {
     if (hours === lastUpdateHour && minutes === lastUpdateMinute) return;
     lastUpdateHour = hours;
     lastUpdateMinute = minutes;
+    
+    console.log("Updating dots for time:", hours, minutes, isAM ? "AM" : "PM");
     
     // Update AM/PM dot
     updateAmPmDot(isAM);
