@@ -26,8 +26,8 @@ function createDotContainers() {
     amPmContainer.style.width = '50px';
     amPmContainer.style.height = '50px';
     amPmContainer.style.position = 'absolute';
-    amPmContainer.style.top = '20px';
-    amPmContainer.style.left = '15px';
+    amPmContainer.style.top = '38px';
+    amPmContainer.style.left = '3px';
     amPmContainer.style.backgroundColor = 'transparent';
     diceContainer.appendChild(amPmContainer);
     
@@ -38,8 +38,8 @@ function createDotContainers() {
     tensContainer.style.width = '50px';
     tensContainer.style.height = '50px';
     tensContainer.style.position = 'absolute';
-    tensContainer.style.top = '20px';
-    tensContainer.style.right = '15px';
+    tensContainer.style.top = '74px';
+    tensContainer.style.right = '-15px';
     tensContainer.style.backgroundColor = 'transparent';
     diceContainer.appendChild(tensContainer);
     
@@ -50,8 +50,8 @@ function createDotContainers() {
     onesContainer.style.width = '50px';
     onesContainer.style.height = '50px';
     onesContainer.style.position = 'absolute';
-    onesContainer.style.bottom = '20px';
-    onesContainer.style.left = '65px';
+    onesContainer.style.bottom = '-63px';
+    onesContainer.style.left = '-18px';
     onesContainer.style.backgroundColor = 'transparent';
     diceContainer.appendChild(onesContainer);
 }
