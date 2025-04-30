@@ -17,28 +17,34 @@ body, html {
     overflow-x: hidden;
     overflow-y: auto;
     font-family: 'ClockFont', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .page-container {
     position: relative;
     min-height: 200vh;
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #000;
+    margin: 0;
+    padding: 0;
 }
 
 .background-container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 200vh;
     background-image: url('/UselessClockAME/assets/images/FrankMiura.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
     z-index: 1;
+    margin: 0;
+    padding: 0;
 }
 
 #dice-container {
@@ -236,8 +242,9 @@ body, html {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .content-section {
-        margin: 80vh 10px 10px 10px;
+        margin: 80vh 0 0 0;
         padding: 15px;
+        width: 100%;
     }
     
     #dice-container {
@@ -250,6 +257,7 @@ body, html {
     .content-section {
         margin-top: 70vh;
         padding: 10px;
+        width: 100%;
     }
     
     #dice-container {
