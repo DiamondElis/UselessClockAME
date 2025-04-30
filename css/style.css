@@ -49,6 +49,7 @@ body, html {
     width: 180px;
     height: 180px;
     background-color: transparent;
+    z-index: 2;
 }
 
 .dot-container {
@@ -56,6 +57,7 @@ body, html {
     width: 50px;
     height: 50px;
     background-color: transparent;
+    z-index: 3;
 }
 
 #am-pm-container {
@@ -79,6 +81,7 @@ body, html {
     height: 10px;
     border-radius: 50%;
     background-color: #000;
+    z-index: 4;
 }
 
 .am-pm-dot {
