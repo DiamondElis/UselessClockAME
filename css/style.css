@@ -23,7 +23,7 @@ body, html {
 
 .page-container {
     position: relative;
-    min-height: 400vh;
+    min-height: 120vh;
     width: 100vw;
     overflow-x: hidden;
     overflow-y: auto;
