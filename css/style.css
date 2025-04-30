@@ -50,7 +50,7 @@ body, html {
 
 #dice-container {
     position: fixed;
-    top: 58%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 180px;
@@ -70,21 +70,21 @@ body, html {
 }
 
 #am-pm-container {
-    top: 38%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #tens-container {
-    top: 74%;
-    right: 50%;
-    transform: translate(50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #ones-container {
-    bottom: 38%;
+    top: 65%;
     left: 50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, -50%);
 }
 
 .dot {
@@ -112,18 +112,18 @@ body, html {
 
 /* Dot positions for dice face 2 */
 .dot-2-topleft {
-    top: 25%;
-    left: 25%;
+    top: 35%;
+    left: 35%;
 }
 .dot-2-bottomright {
-    bottom: 25%;
-    right: 25%;
+    bottom: 35%;
+    right: 35%;
 }
 
 /* Dot positions for dice face 3 */
 .dot-3-topleft {
-    top: 25%;
-    left: 25%;
+    top: 35%;
+    left: 35%;
 }
 .dot-3-center {
     top: 50%;
@@ -131,36 +131,36 @@ body, html {
     transform: translate(-50%, -50%);
 }
 .dot-3-bottomright {
-    bottom: 25%;
-    right: 25%;
+    bottom: 35%;
+    right: 35%;
 }
 
 /* Dot positions for dice face 4 */
 .dot-4-topleft {
-    top: 25%;
-    left: 25%;
+    top: 35%;
+    left: 35%;
 }
 .dot-4-topright {
-    top: 25%;
-    right: 25%;
+    top: 35%;
+    right: 35%;
 }
 .dot-4-bottomleft {
-    bottom: 25%;
-    left: 25%;
+    bottom: 35%;
+    left: 35%;
 }
 .dot-4-bottomright {
-    bottom: 25%;
-    right: 25%;
+    bottom: 35%;
+    right: 35%;
 }
 
 /* Dot positions for dice face 5 */
 .dot-5-topleft {
-    top: 25%;
-    left: 25%;
+    top: 35%;
+    left: 35%;
 }
 .dot-5-topright {
-    top: 25%;
-    right: 25%;
+    top: 35%;
+    right: 35%;
 }
 .dot-5-center {
     top: 50%;
@@ -168,40 +168,40 @@ body, html {
     transform: translate(-50%, -50%);
 }
 .dot-5-bottomleft {
-    bottom: 25%;
-    left: 25%;
+    bottom: 35%;
+    left: 35%;
 }
 .dot-5-bottomright {
-    bottom: 25%;
-    right: 25%;
+    bottom: 35%;
+    right: 35%;
 }
 
 /* Dot positions for dice face 6 */
 .dot-6-topleft {
-    top: 25%;
-    left: 25%;
+    top: 35%;
+    left: 35%;
 }
 .dot-6-topmiddle {
-    top: 25%;
+    top: 35%;
     left: 50%;
     transform: translateX(-50%);
 }
 .dot-6-topright {
-    top: 25%;
-    right: 25%;
+    top: 35%;
+    right: 35%;
 }
 .dot-6-bottomleft {
-    bottom: 25%;
-    left: 25%;
+    bottom: 35%;
+    left: 35%;
 }
 .dot-6-bottommiddle {
-    bottom: 25%;
+    bottom: 35%;
     left: 50%;
     transform: translateX(-50%);
 }
 .dot-6-bottomright {
-    bottom: 25%;
-    right: 25%;
+    bottom: 35%;
+    right: 35%;
 }
 
 /* Test element to verify CSS loading */
