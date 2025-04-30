@@ -14,8 +14,15 @@
 body, html {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: 'ClockFont', sans-serif;
+}
+
+.page-container {
+    position: relative;
+    min-height: 150vh;
+    width: 100%;
 }
 
 .background-container {
@@ -29,11 +36,11 @@ body, html {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #a48d57; /* Golden color that matches the image */
+    background-color: #a48d57;
 }
 
 #dice-container {
-    position: absolute;
+    position: fixed;
     top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -190,8 +197,44 @@ body, html {
     z-index: 999;
 }
 
-/* Responsive design adjustments */
+/* Add some content sections for scrolling */
+.content-section {
+    padding: 20px;
+    margin: 100vh 20px 20px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add a scroll indicator */
+.scroll-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 20px;
+    z-index: 100;
+    animation: fade 2s infinite;
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    .content-section {
+        margin: 80vh 10px 10px 10px;
+        padding: 15px;
+    }
+    
     #dice-container {
         width: 150px;
         height: 150px;
@@ -199,6 +242,11 @@ body, html {
 }
 
 @media (max-width: 480px) {
+    .content-section {
+        margin-top: 70vh;
+        padding: 10px;
+    }
+    
     #dice-container {
         width: 100px;
         height: 100px;
