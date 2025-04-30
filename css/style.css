@@ -59,23 +59,22 @@ body, html {
 }
 
 .am-pm-dice {
-    top: 38px;
-    left: 3px;
-    transform: none;
+    top: 440px;
+    left: 700px;
+    transform: rotate(28deg);
 }
 
 .tens-dice {
-    top: 74px;
-    right: -15px;
-    left: auto;
-    transform: none;
+    top: 560px;
+    left: 880px;
+    transform: rotate(28deg);
 }
 
 .ones-dice {
-    bottom: -63px;
-    left: -18px;
+    bottom: 82px;
+    left: 640px;
     top: auto;
-    transform: none;
+    transform: rotate(18deg);
 }
 
 .minutes-dice {
