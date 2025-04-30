@@ -25,8 +25,8 @@ body, html {
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* Use the first image as the full background */
-    background-image: url('../assets/images/useless-clock.jpg');
+    /* Updated path for GitHub Pages */
+    background-image: url('/UselessClockAME/assets/images/FrankMiura.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,6 +42,17 @@ body, html {
     height: 200px;
     /* Make the container transparent so it doesn't block the image */
     background-color: transparent;
+}
+
+/* Test element to verify CSS loading */
+.test-element {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: blue;
+    color: red;
+    padding: 10px;
+    z-index: 999;
 }
 
 /* Responsive design adjustments */
