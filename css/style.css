@@ -48,93 +48,54 @@ body, html {
     padding: 0;
 }
 
-#dice-container-1 {
+#dice-container-1, #dice-container-2, #dice-container-3, #dice-container-4 {
     position: fixed;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 180px;
     height: 180px;
     background-color: transparent;
     z-index: 10;
     pointer-events: none;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#dice-container-1 {
+    top: 35%;
 }
 
 #dice-container-2 {
-    position: fixed;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    background-color: transparent;
-    z-index: 10;
-    pointer-events: none;
 }
 
 #dice-container-3 {
-    position: fixed;
     top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    background-color: transparent;
-    z-index: 10;
-    pointer-events: none;
 }
 
 #dice-container-4 {
-    position: fixed;
     top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
-    background-color: transparent;
-    z-index: 10;
-    pointer-events: none;
 }
 
 .dot-container {
-    position: fixed;
-    width: 50px;
-    height: 50px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background-color: transparent;
     z-index: 11;
     pointer-events: none;
+    top: 0;
+    left: 0;
 }
 
-/* Container 1 dots */
-#dice-1-dot-container {
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Container 2 dots */
-#dice-2-dot-container {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Container 3 dots */
-#dice-3-dot-container {
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Container 4 dots */
-#dice-4-dot-container {
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#dice-1-dot-container, #dice-2-dot-container, #dice-3-dot-container, #dice-4-dot-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .dot {
-    position: fixed;
+    position: absolute;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -158,18 +119,18 @@ body, html {
 
 /* Dot positions for dice face 2 */
 .dot-2-topleft {
-    top: 35%;
-    left: 35%;
+    top: 25%;
+    left: 25%;
 }
 .dot-2-bottomright {
-    bottom: 35%;
-    right: 35%;
+    bottom: 25%;
+    right: 25%;
 }
 
 /* Dot positions for dice face 3 */
 .dot-3-topleft {
-    top: 35%;
-    left: 35%;
+    top: 25%;
+    left: 25%;
 }
 .dot-3-center {
     top: 50%;
@@ -177,36 +138,36 @@ body, html {
     transform: translate(-50%, -50%);
 }
 .dot-3-bottomright {
-    bottom: 35%;
-    right: 35%;
+    bottom: 25%;
+    right: 25%;
 }
 
 /* Dot positions for dice face 4 */
 .dot-4-topleft {
-    top: 35%;
-    left: 35%;
+    top: 25%;
+    left: 25%;
 }
 .dot-4-topright {
-    top: 35%;
-    right: 35%;
+    top: 25%;
+    right: 25%;
 }
 .dot-4-bottomleft {
-    bottom: 35%;
-    left: 35%;
+    bottom: 25%;
+    left: 25%;
 }
 .dot-4-bottomright {
-    bottom: 35%;
-    right: 35%;
+    bottom: 25%;
+    right: 25%;
 }
 
 /* Dot positions for dice face 5 */
 .dot-5-topleft {
-    top: 35%;
-    left: 35%;
+    top: 25%;
+    left: 25%;
 }
 .dot-5-topright {
-    top: 35%;
-    right: 35%;
+    top: 25%;
+    right: 25%;
 }
 .dot-5-center {
     top: 50%;
@@ -214,40 +175,40 @@ body, html {
     transform: translate(-50%, -50%);
 }
 .dot-5-bottomleft {
-    bottom: 35%;
-    left: 35%;
+    bottom: 25%;
+    left: 25%;
 }
 .dot-5-bottomright {
-    bottom: 35%;
-    right: 35%;
+    bottom: 25%;
+    right: 25%;
 }
 
 /* Dot positions for dice face 6 */
 .dot-6-topleft {
-    top: 35%;
-    left: 35%;
+    top: 25%;
+    left: 25%;
 }
 .dot-6-topmiddle {
-    top: 35%;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%);
 }
 .dot-6-topright {
-    top: 35%;
-    right: 35%;
+    top: 25%;
+    right: 25%;
 }
 .dot-6-bottomleft {
-    bottom: 35%;
-    left: 35%;
+    bottom: 25%;
+    left: 25%;
 }
 .dot-6-bottommiddle {
-    bottom: 35%;
+    bottom: 25%;
     left: 50%;
     transform: translateX(-50%);
 }
 .dot-6-bottomright {
-    bottom: 35%;
-    right: 35%;
+    bottom: 25%;
+    right: 25%;
 }
 
 /* Test element to verify CSS loading */
