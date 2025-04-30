@@ -26,9 +26,9 @@ body, html {
     height: 100%;
     z-index: -1;
     /* Update path to match the correct repository structure */
-    background-image: url('../assets/images/FrankMiura.jpg');
+    background-image: url('../assets/images/FrankMiura.png');
     /* If the above doesn't work, try these alternatives */
-    /* background-image: url('/UselessClockAME/assets/images/FrankMiura.jpg'); */
+    /* background-image: url('/UselessClockAME/assets/images/FrankMiura.png'); */
     /* background-image: url('https://diamondelis.github.io/UselessClockAME/assets/images/FrankMiura.png'); */
     background-size: cover;
     background-position: center;
