@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'ClockFont';
+    src: url('../assets/fonts/clock-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'ClockFont', sans-serif;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Use the first image as the full background */
+    background-image: url('../assets/images/useless-clock.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#dice-container {
+    position: absolute;
+    /* Position this exactly where the dice appear in your image */
+    top: 65%; /* Adjust as needed to match the image */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    /* Make the container transparent so it doesn't block the image */
+    background-color: transparent;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    #dice-container {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    #dice-container {
+        width: 100px;
+        height: 100px;
+    }
+} 
