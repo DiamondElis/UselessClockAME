@@ -74,9 +74,8 @@ body, html {
 
 .ones-dice {
     position: absolute;
-    bottom: 1870px;
+    top: 1720px;
     left: 640px;
-    top: auto;
     transform: rotate(18deg);
 }
 
